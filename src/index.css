@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .but {
+    @apply border-orenge dark-border dark-text text-orenge dark:text-white  h-[50px] px-5 font-nunito border inline-flex items-center justify-center whitespace-nowrap rounded-2xl active:translate-y-[1px] font-medium  transition-colors }
+  .but-outline {
+    @apply border border-primary text-primary bg-transparent hover:bg-secondary;
+  }
+
+  .dark-border {
+    @apply dark:border-indigo-500;
+  }
+  .dark-bg {
+    @apply dark:bg-indigo-500;
+  }
+  .dark-text {
+    @apply dark:text-indigo-500;
+  }
+  .ligth-text {
+    @apply dark:text-white;
+  }
+}
