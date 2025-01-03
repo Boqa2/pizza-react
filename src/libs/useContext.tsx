@@ -14,7 +14,7 @@ const NotificationContext = createContext<ContextType | undefined>(undefined);
 // Провайдер контекста
 export const NotificationProvider = ({ children }: { children: ReactNode }) => {
   const [values, setValue] = useState<string>("");
-  const [index, setIndex] = useState<number>(0);
+  const [index, setIndex] = useState<number>(1);
   const [efects, setEfects] = useState<boolean>(true);
 
   return (

@@ -1,50 +1,61 @@
 import { useState } from "react";
-import { useFunction } from "../../libs/useContext";
-import { cats } from "../UI/data";
+import { cats } from "../UI/data"; // Предполагается, что это массив категорий
 import Button from "./Button";
 import { X } from "lucide-react";
+import { useFunction } from "../../libs/useContext";
 
-const MobileCatigori = () => {
-  const [open, setOpen] = useState<boolean>(false);
-  const cat = cats[0];
-  const { index, setIndex } = useFunction();
+const MobileCategory = () => {
+  const [open, setOpen] = useState<boolean>(false); // Состояние боковой панели
+  const {index, setIndex} = useFunction(); // Состояние выбранной категории
+  const categories = cats[0]; // Предполагается, что cats[0] — массив объектов категорий
+
   return (
     <>
+      
       <Button
-        className="lg:hidden text-white block dark:bg-indigo-600 font-bold h-full py-3"
+        className="lg:hidden w-1/2 bg-orenge text-sm text-white block dark:bg-indigo-600 font-bold h-full p-2"
         onClick={() => setOpen(!open)}
       >
-        {open ? "Откырь " : "Закрат"} категории
+        {!open ? "Открыть" : "Закрыть"} категории
       </Button>
+
+     
       <div
-        className={`${!open ? "scale-0" : ""} inline-flex py-1 duration-500 absolute top-0 w-1/2 font-nunito  right-0 gap-1 container dark:bg-indigo-600 dark:text-white flex-col  bg-gray-200 p-1 rounded-2xl`}
+        className={`${
+          !open ? "scale-0" : "scale-100"
+        } inline-flex py-1 duration-500 absolute top-0 w-1/2 font-nunito right-0 gap-1 container dark:bg-indigo-600 dark:text-white flex-col bg-gray-200 p-1 rounded-2xl`}
       >
+        {/* Кнопка закрытия */}
         <div className="w-full flex justify-end">
           <Button
-            className="p-4 border-none text-end"
-            onClick={() => setOpen(!open)}
+            className="pt-2 border-none text-end"
+            onClick={() => setOpen(false)}
           >
             <X />
           </Button>
         </div>
-        {cat.map((cat, i) => (
-          <a
-            key={i}
-            onClick={() => setIndex(i++)}
-            className={`
-                  flex items-center w-full font-bold h-10 rounded-2xl px-5 ",
-                  ${
-                    index === i &&
-                    "shadow-lg dark:shadow-indigo-500 dark-text bg-white shadow-gray-200  text-white"
-                  }
-                `}
+
+        {/* Список категорий */}
+        {  categories && categories.map((category) => (
+          <div
+            key={category.id}
+            className={`flex items-center w-full font-bold rounded-2xl ${
+             index === category.id &&
+             "bg-white shadow-lg dark:shadow-indigo-500 dark:text-indigo-600 shadow-gray-200  text-orenge"
+           }`}
           >
-            <button onClick={() => setIndex(i++)}>{cat}</button>
-          </a>
+            <button
+              className="w-full px-5 py-2"
+              onClick={() => setIndex(category.id)}
+            >
+              {category.name}
+            </button>
+          </div>
         ))}
       </div>
     </>
   );
 };
 
-export default MobileCatigori;
+export default MobileCategory;
+

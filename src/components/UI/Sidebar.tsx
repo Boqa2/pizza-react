@@ -1,5 +1,7 @@
-import { X } from "lucide-react";
-import {  MouseEvent } from "react";
+import { ShoppingCart, User, X } from "lucide-react";
+import { MouseEvent } from "react";
+import { Switch } from "../shared/Switch";
+import Button from "../shared/Button";
 
 const Sidebar = ({
   efects,
@@ -10,27 +12,51 @@ const Sidebar = ({
 }) => {
   return (
     <div
-      // Закрытие боковой панели при клике за её пределами
       onClick={setEfects}
-      className={`relative text-white z-10 duration-700 ${efects ? "" : "scale-0"}`}
+      className={`relative text-white z-10 duration-700 ${
+        efects ? "" : "scale-0"
+      }`}
     >
       <div
         // Обёртка боковой панели с фоном
-        className={`absolute bg-black dark:bg-opacity-90 bg-opacity-60 z-10 w-full h-screen flex justify-end duration-700 ${
-          efects ? "" : "scale-0"
+        className={`absolute bg-black dark:bg-opacity-90 bg-opacity-60 duration-500 z-10 w-full h-screen flex justify-end  ${
+          efects ? "scale-x-100" : "scale-0"
         }`}
       >
         <div
-          // Содержимое боковой панели
           onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-          className={`w-1/2 h-full dark-bg bg-orange-400 duration-1000 ${
-            efects ? "translate-x-0" : "translate-x-[1500px]"
+          className={`w-3/5 p-3 h-full space-y-5 dark:bg-indigo-300 bg-orange-400 duration-1000 ${
+            efects ? "translate-x-0" : "-translate-y-[1500px]"
           }`}
         >
-          {/* Кнопка закрытия */}
-          <button onClick={setEfects}>
-            <X />
-          </button>
+          <div className="w-full inline-flex justify-end">
+            <button onClick={setEfects}>
+              <X />
+            </button>
+          </div>
+          <div className="flex justify-between">
+            <div className="leading-1 inline-flex ">
+              <img className="w-11 h-9" src="/public/img/logo.png" alt="" />
+              <div className=" inline-flex flex-col">
+                <h1 className="md:text-2xl text-sm font-nunito uppercase font-black">
+                  React<br/> Pizza
+                </h1>
+                <p className="text-[10px] hidden md:block md:text-sm text-gray-400 leading-3 ">
+                  вкусней не куда
+                </p>
+              </div>
+            </div>
+            <Switch />
+          </div>
+          <div className="inline-flex gap-3  w-full flex-col">
+          <Button className="font-nunito gap-1">
+            <User size={20} />
+            Войти
+          </Button>
+          <Button className="">
+            <ShoppingCart size={20} />
+          </Button>
+          </div>
         </div>
       </div>
     </div>

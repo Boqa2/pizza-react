@@ -14,7 +14,7 @@ const Layout = () => {
         <main className="min-h-screen relative overflow-hidden">
             <Sidebar efects={efects} setEfects={()=>setEfects(false)} />
             <Header setEfects={()=>setEfects(true)} img="/img/logo.png" />
-            <Catigoties/>
+            <Catigoties />
             <Outlet />
             <Toaster/>
             <Footer />

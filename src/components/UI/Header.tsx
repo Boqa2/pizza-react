@@ -7,14 +7,14 @@ import { Switch } from "../shared/Switch";
 const Header = ({ img,setEfects }: { img: string, setEfects:()=>void }) => {
   return (
     <Container>
-      <header className="flex justify-between  w-full dark-border p-5 h-1/5 border-b ">
-        <div className="flex gap-2">
-          <img src={img} alt="" width={45} height={35} />
-          <div className="">
-            <h1 className="md:text-2xl text-base font-nunito uppercase font-black">
+      <header className="flex justify-between items-center gap-2 w-full dark-border p-2 md:p-5 h-1/3 border-b ">
+        <div className="flex gap-1 items-center">
+          <img className="w-11 h-9" src={img} alt="" />
+          <div className="leading-1">
+            <h1 className="md:text-2xl text-sm font-nunito uppercase font-black">
               React Pizza
             </h1>
-            <p className="text-sm text-gray-400 leading-3 ">вкусней не куда</p>
+            <p className="text-[10px] hidden md:block md:text-sm text-gray-400 leading-3 ">вкусней не куда</p>
           </div>
         </div>
         <SearchGroup />
