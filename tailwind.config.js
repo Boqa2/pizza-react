@@ -11,6 +11,7 @@ export default {
       borderColor: "#FE5F00",
       colors: {
         orenge: "#FE5F00",
+        forPizza: "#FFF7EE"
       },
     },
   },

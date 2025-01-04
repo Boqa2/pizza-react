@@ -10,7 +10,7 @@ const Switch = () => {
 
   return (
     <div
-      className={`inline-flex h-7 bg-orenge text-white  dark-bg w-14 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
+      className={`inline-flex h-7 bg-gray-400 text-white  w-14 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       onClick={toggleTheme} // Обработчик переключения темы
     >
       <div

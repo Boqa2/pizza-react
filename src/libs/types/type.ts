@@ -22,6 +22,7 @@ export interface ItemSearch {
 export interface PizzaCard {
     id: string; // Уникальный идентификатор пиццы
     name: string; // Название пиццы
+    className?:string
     price: [{
         size: string; // Размер пиццы (например, "Small", "Medium", "Large")
         price: number; // Цена для данного размера

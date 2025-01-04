@@ -4,14 +4,14 @@ import { useFunction } from "../../libs/useContext";
 import ListSearch from "./ListSearch";
 
 const SearchGroup = () => {
-  const { values, setValue } =useFunction()
+  const { values, setValue } = useFunction();
 
   return (
     <div className="flex flex-col items-center w-full md:w-1/2 relative">
       <div className="inline-flex items-center flex-col w-full  h-full text-slate-500 ligth-text relative">
         <Search
           size={16}
-          className="absolute top-1/2  left-2  -translate-y-1/2"
+          className="absolute top-1/2 left-2 -translate-y-1/2"
         />
         <input
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -24,14 +24,22 @@ const SearchGroup = () => {
         />
         {values ? (
           <X
-            onClick={()=>setValue("")}
+            onClick={() => setValue("")}
             size={16}
             className="absolute top-1/2  right-1 -translate-y-1/2"
-          />) : ("")
-        }
+          />
+        ) : (
+          ""
+        )}
       </div>
-      <div className="absolute top-16 w-full">
-        <ListSearch />
+      <div
+        className="absolute overflow-y-auto top-16 w-full max-h-80 shadow-lg rounded-2xl"
+        style={{
+          scrollbarWidth: "thin",
+          scrollbarColor: "transparent transparent",
+        }}
+      >
+        {values && values.length > 0 ? <ListSearch /> : null}
       </div>
     </div>
   );

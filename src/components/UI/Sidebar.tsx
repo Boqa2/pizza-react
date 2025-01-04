@@ -25,7 +25,7 @@ const Sidebar = ({
       >
         <div
           onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-          className={`w-3/5 p-3 h-full space-y-5 dark:bg-indigo-300 bg-orange-400 duration-1000 ${
+          className={`w-3/5 p-3 h-full space-y-5 dark:bg-indigo-200 bg-orange-200 duration-1000 ${
             efects ? "translate-x-0" : "-translate-y-[1500px]"
           }`}
         >
@@ -35,8 +35,8 @@ const Sidebar = ({
             </button>
           </div>
           <div className="flex justify-between">
-            <div className="leading-1 inline-flex ">
-              <img className="w-11 h-9" src="/public/img/logo.png" alt="" />
+            <div className="leading-3 gap-3 inline-flex ">
+              <img className="w-11 h-4/6" src="img/logo.png" alt="" />
               <div className=" inline-flex flex-col">
                 <h1 className="md:text-2xl text-sm font-nunito uppercase font-black">
                   React<br/> Pizza

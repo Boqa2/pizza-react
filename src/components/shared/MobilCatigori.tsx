@@ -13,7 +13,7 @@ const MobileCategory = () => {
     <>
       
       <Button
-        className="lg:hidden w-1/2 bg-orenge text-sm text-white block dark:bg-indigo-600 font-bold h-full p-2"
+        className="lg:hidden w-1/2 dark:text-white bg-orenge text-sm text-white block dark:bg-indigo-600 font-bold h-full p-2"
         onClick={() => setOpen(!open)}
       >
         {!open ? "Открыть" : "Закрыть"} категории
@@ -28,7 +28,7 @@ const MobileCategory = () => {
         {/* Кнопка закрытия */}
         <div className="w-full flex justify-end">
           <Button
-            className="pt-2 border-none text-end"
+            className="pt-2 dark:text-white border-none text-end"
             onClick={() => setOpen(false)}
           >
             <X />

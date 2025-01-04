@@ -4,11 +4,12 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./libs/redux/store.ts";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage.tsx";
+import HomePage from "./pages/home/HomePage.tsx";
 import Layout from "./layout/layout.tsx";
 import { NotificationProvider } from "./libs/useContext.tsx";
 import { ThemeProvider } from "next-themes";
 import PizzaCard from "./pages/PizzaCard.tsx";
+import PizzaOpenModal from "./pages/home/PizzaOpenModal.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "home/products/:id",
+        element: <PizzaOpenModal />,
       },
       // {
       //   path: "trash",

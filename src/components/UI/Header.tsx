@@ -6,7 +6,7 @@ import { Switch } from "../shared/Switch";
 
 const Header = ({ img,setEfects }: { img: string, setEfects:()=>void }) => {
   return (
-    <Container>
+    <Container className="px-0">
       <header className="flex justify-between items-center gap-2 w-full dark-border p-2 md:p-5 h-1/3 border-b ">
         <div className="flex gap-1 items-center">
           <img className="w-11 h-9" src={img} alt="" />

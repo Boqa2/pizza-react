@@ -7,7 +7,7 @@
 
 @layer components {
   .but {
-    @apply border-orenge dark-border dark-text text-orenge dark:text-white  h-[50px] px-5 font-nunito border inline-flex items-center justify-center whitespace-nowrap rounded-2xl active:translate-y-[2px] font-medium  transition-colors }
+    @apply border-orenge dark-border dark-text text-orenge h-[50px] px-5 font-nunito border inline-flex items-center justify-center whitespace-nowrap rounded-2xl active:translate-y-[2px] font-medium  transition-colors }
   .but-outline {
     @apply border border-primary text-primary bg-transparent hover:bg-secondary;
   }

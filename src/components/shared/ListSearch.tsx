@@ -15,6 +15,8 @@ const ListSearch = () => {
   }, [data, values]);
 
   return (
+    <div className="w-full h-full">
+
     <div className="flex flex-col  gap-2">
       {isLoading ? (
         <p>loadingg</p>
@@ -32,6 +34,7 @@ const ListSearch = () => {
       ) : (
         ""
       )}
+    </div>
     </div>
   );
 };
