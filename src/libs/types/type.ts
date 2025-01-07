@@ -1,9 +1,9 @@
-import {  ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface Chart {
     children?: ReactNode,
     className?: string
-    onClick?:()=>void
+    onClick?: () => void
 }
 
 export interface ItemSearch {
@@ -11,10 +11,10 @@ export interface ItemSearch {
     title: string;
     price?: {
         size?: string;
-        price:number
+        price: number
     }
     imageUrl: string
-    priseForSearch?:number
+    priseForSearch?: number
     type: string
 
 }
@@ -22,13 +22,23 @@ export interface ItemSearch {
 export interface PizzaCard {
     id: string; // Уникальный идентификатор пиццы
     name: string; // Название пиццы
-    className?:string
+    className?: string
     price: [{
         size: string; // Размер пиццы (например, "Small", "Medium", "Large")
         price: number; // Цена для данного размера
     }]; // Массив с ценами для разных размеров
-    description: string; // Описание пиццы
+    discription: string; // Описание пиццы
     imageUrl: string; // URL изображения пиццы
-    priseForSearch:number
-    type:string
+    priseForSearch: number
+    type: string
+    onClick: () => void
+}
+export interface Pros{
+    id:string;
+    name:string
+}
+export interface Ingridients {
+    id: string; // Уникальный идентификатор пиццы
+    price: number // Массив с ценами для разных размеров
+    imageUrl: string; // URL изображения пиццы
 }

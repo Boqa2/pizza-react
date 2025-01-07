@@ -4,7 +4,7 @@ import ItemsSearch from "./ItemsSearch";
 import { useGetPizzaQuery } from "../../libs/redux/servisec/api";
 const ListSearch = () => {
   const { values } = useFunction();
-  const { data, isLoading } = useGetPizzaQuery();
+  const { data, isLoading } = useGetPizzaQuery({str:"Pizza-card", type:"search", value:"all"});
 
   const filter = useMemo(() => {
     if (!data) return [];
@@ -15,7 +15,7 @@ const ListSearch = () => {
   }, [data, values]);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full relative z-50 h-full">
 
     <div className="flex flex-col  gap-2">
       {isLoading ? (

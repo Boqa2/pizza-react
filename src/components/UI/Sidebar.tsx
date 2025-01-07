@@ -13,7 +13,7 @@ const Sidebar = ({
   return (
     <div
       onClick={setEfects}
-      className={`relative text-white z-10 duration-700 ${
+      className={`relative text-white z-50 duration-700 ${
         efects ? "" : "scale-0"
       }`}
     >

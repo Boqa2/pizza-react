@@ -9,7 +9,6 @@ import Layout from "./layout/layout.tsx";
 import { NotificationProvider } from "./libs/useContext.tsx";
 import { ThemeProvider } from "next-themes";
 import PizzaCard from "./pages/PizzaCard.tsx";
-import PizzaOpenModal from "./pages/home/PizzaOpenModal.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
-      },
-      {
-        path: "home/products/:id",
-        element: <PizzaOpenModal />,
       },
       // {
       //   path: "trash",
@@ -57,9 +52,10 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "search/carditems/:id",
-    element: <PizzaCard />,
+    path: "home/products/:id",
+    element: <PizzaCard/>,
   },
+  
 ]);
 
 createRoot(document.getElementById("root")!).render(
