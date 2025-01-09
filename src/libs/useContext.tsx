@@ -11,6 +11,10 @@ interface ContextType {
   setOpen: (value: boolean) => void;
   efects: boolean;
   setEfects: (value: boolean) => void;
+  pizzaId: string;
+  setPizzaId: (value: string) => void;
+  cart: boolean;
+  setCart: (value: boolean) => void;
   activeCategory: string;
   setActiveCategory: (value: string) => void;
 }
@@ -25,6 +29,8 @@ export const NotificationProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [efects, setEfects] = useState<boolean>(true);
   const [modal, setModal] = useState<boolean>(false);
+  const [cart, setCart] = useState<boolean>(true);
+  const [pizzaId, setPizzaId] = useState<string>("");
   const [activeCategory, setActiveCategory] = useState<string>("Пицца");
 
   return (
@@ -32,6 +38,10 @@ export const NotificationProvider = ({ children }: { children: ReactNode }) => {
       value={{
         values,
         modal,
+        cart,
+        pizzaId,
+        setPizzaId,
+        setCart,
         activeCategory,
         setActiveCategory,
         open,

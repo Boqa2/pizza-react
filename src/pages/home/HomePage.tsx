@@ -48,7 +48,7 @@ const HomePage = () => {
         <div className="hidden px-5 bg-red-500 w-1/4">
           <h1>Фильтрация</h1>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col w-full gap-10">
           <ProductsGroupList isLoading={pizzaLoad} data={pizza} title="Пицца" />
           <ProductsGroupList isLoading={isComboLoad} data={combos} title="Комбо" />
           <ProductsGroupList isLoading={isZakusLoad} data={zakuski} title="Закуски" />

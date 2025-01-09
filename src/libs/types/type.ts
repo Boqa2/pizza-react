@@ -32,6 +32,7 @@ export interface PizzaCard {
     priseForSearch: number
     type: string
     onClick: () => void
+    onClicks: () => void
 }
 export interface Pros{
     id:string;

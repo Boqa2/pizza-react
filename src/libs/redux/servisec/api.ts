@@ -37,6 +37,38 @@ export const pizzaApi = createApi({
         }
       },
     }),
+    getOnePizza: builder.query<PizzaCard, { str: string; id: string }>({
+      queryFn: async ({ str, id }) => {
+        try {
+          const { data, error } = await supabase
+            .from(str) // Указываем таблицу
+            .select("*") // Выбираем все поля или только необходимые
+            .eq("id", id) // Фильтруем по id
+            .single(); // Указываем, что ожидаем одну запись
+    
+          // Обрабатываем ошибку, если она есть
+          if (error) {
+            return {
+              error: {
+                status: parseInt(error.code) || 500, // Преобразуем код ошибки в число
+                statusText: error.message || "Unknown Error",
+                data: error.details || "An error occurred while fetching pizza by id",
+              },
+            };
+          }
+    
+          return { data }; // Возвращаем данные
+        } catch (err) {
+          return {
+            error: {
+              status: 500,
+              statusText: "Internal Server Error",
+              data: String(err), // Преобразуем ошибку в строку
+            },
+          };
+        }
+      },
+    }),    
     getDobavki: builder.query<Ingridients[], void>({
       queryFn: async () => {
         try {
@@ -67,4 +99,4 @@ export const pizzaApi = createApi({
   }),
 });
 
-export const { useGetPizzaQuery, useGetDobavkiQuery } = pizzaApi;
+export const { useGetPizzaQuery, useGetDobavkiQuery, useGetOnePizzaQuery } = pizzaApi;

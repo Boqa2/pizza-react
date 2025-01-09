@@ -9,7 +9,7 @@ import { useFunction } from "../../libs/useContext";
 const Header = ({ img, setEfects }: { img: string; setEfects: () => void }) => {
   const [open, setOpen] = useState<boolean>(false);
   
-  const { setValue } = useFunction();
+  const { setValue, setCart, cart } = useFunction();
   return (
     <Container className="px-0 overflow-y-visible">
       <header className="flex justify-between overflow-x-visible items-center gap-2 w-full dark-border p-2 md:p-5 h-1/3 border-b ">
@@ -31,7 +31,7 @@ const Header = ({ img, setEfects }: { img: string; setEfects: () => void }) => {
               setOpen(!open);
               setValue("");
             }}
-            className={`text-orenge absolute top-1/2  right-1/2 tr lg:-right-1/2 lg:translate-x-1/2 -translate-x-1/2 active:-translate-y-5 -translate-y-1/2 z-40 rounded-none border-none px-2 py-2 p-0 dark-text`}
+            className={`text-orenge absolute top-1/2  right-1/2 tr lg:-right-1/2 lg:translate-x-1/2 -translate-x-1/2 active:-translate-y-5 -translate-y-1/2 z-30 rounded-none border-none px-2 py-2 p-0 dark-text`}
           >
             <Search size={20} className="" />
           </Button>)}
@@ -48,7 +48,7 @@ const Header = ({ img, setEfects }: { img: string; setEfects: () => void }) => {
             <User size={20} />
             Войти
           </Button>
-          <Button className="">
+          <Button onClick={()=>setCart(!cart)} className="">
             <ShoppingCart size={20} />
           </Button>
         </div>

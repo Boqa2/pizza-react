@@ -2,6 +2,7 @@ import { ShoppingCart, User, X } from "lucide-react";
 import { MouseEvent } from "react";
 import { Switch } from "../shared/Switch";
 import Button from "../shared/Button";
+import { useFunction } from "../../libs/useContext";
 
 const Sidebar = ({
   efects,
@@ -10,10 +11,11 @@ const Sidebar = ({
   efects: boolean;
   setEfects: () => void;
 }) => {
+  const {cart, setCart} = useFunction()
   return (
     <div
       onClick={setEfects}
-      className={`relative text-white z-50 duration-700 ${
+      className={`sticky top-0 text-white z-40 duration-700 ${
         efects ? "" : "scale-0"
       }`}
     >
@@ -53,7 +55,7 @@ const Sidebar = ({
             <User size={20} />
             Войти
           </Button>
-          <Button className="">
+          <Button onClick={()=>setCart(!cart)} className="">
             <ShoppingCart size={20} />
           </Button>
           </div>
