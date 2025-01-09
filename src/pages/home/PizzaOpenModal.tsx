@@ -1,11 +1,11 @@
 import { ChevronDown, X } from "lucide-react";
 import { useFunction } from "../../libs/useContext";
-import { usePizzaData } from ".";
+// import { usePizzaData } from ".";
 import { useGetOnePizzaQuery } from "../../libs/redux/servisec/api";
 import { FormEvent, useState } from "react";
 
 const PizzaOpenModal = () => {
-  const { dobavki, isLoadDob } = usePizzaData();
+  // const { dobavki, isLoadDob } = usePizzaData();
   const { setModal, pizzaId } = useFunction();
   const { data: forId } = useGetOnePizzaQuery({
     str: "Pizza-card",
