@@ -23,7 +23,7 @@ export interface PizzaCard {
     id: string; // Уникальный идентификатор пиццы
     name: string; // Название пиццы
     className?: string
-    price: [{
+    price?: [{
         size: string; // Размер пиццы (например, "Small", "Medium", "Large")
         price: number; // Цена для данного размера
     }]; // Массив с ценами для разных размеров
@@ -34,12 +34,17 @@ export interface PizzaCard {
     onClick: () => void
     onClicks: () => void
 }
-export interface Pros{
-    id:string;
-    name:string
+export interface Pros {
+    id: string;
+    name: string
 }
 export interface Ingridients {
     id: string; // Уникальный идентификатор пиццы
     price: number // Массив с ценами для разных размеров
+    name: string
     imageUrl: string; // URL изображения пиццы
+}
+export interface Spices {
+    loading: boolean;
+    items?: Ingridients[];
 }
