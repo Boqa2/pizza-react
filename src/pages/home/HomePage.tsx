@@ -6,7 +6,18 @@ import { useFunction } from "../../libs/useContext";
 import { usePizzaData } from ".";
 
 const HomePage = () => {
-  const { pizza, pizzaLoad, desert, isLoadDesert, isZakusLoad, zakuski, combos, isComboLoad } = usePizzaData();
+  const {
+    pizza,
+    pizzaLoad,
+    desert,
+    drinks,
+    isLoadNap,
+    isLoadDesert,
+    isZakusLoad,
+    zakuski,
+    combos,
+    isComboLoad,
+  } = usePizzaData();
   const { setActiveCategory } = useFunction();
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const categories = cats[0];
@@ -50,10 +61,26 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col w-full gap-10">
           <ProductsGroupList isLoading={pizzaLoad} data={pizza} title="Пицца" />
-          <ProductsGroupList isLoading={isComboLoad} data={combos} title="Комбо" />
-          <ProductsGroupList isLoading={isZakusLoad} data={zakuski} title="Закуски" />
-          <ProductsGroupList isLoading={isLoadDesert} data={desert} title="Десерты" />
-          <ProductsGroupList isLoading={isLoadDesert} data={desert} title="Соусы" />
+          <ProductsGroupList
+            isLoading={isComboLoad}
+            data={combos}
+            title="Комбо"
+          />
+          <ProductsGroupList
+            isLoading={isZakusLoad}
+            data={zakuski}
+            title="Закуски"
+          />
+          <ProductsGroupList
+            isLoading={isLoadDesert}
+            data={desert}
+            title="Десерты"
+          />
+          <ProductsGroupList
+            isLoading={isLoadNap}
+            data={drinks}
+            title="Напитки"
+          />
         </div>
       </div>
     </Container>
