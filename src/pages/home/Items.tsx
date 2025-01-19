@@ -40,7 +40,7 @@ const Items = () => {
                     ? "full"
                     : ""
                 } `}
-                src={sizes ? (forId?.imageUrl) : (forId?.forImage?.imageUrl)}
+                src={!sizes ? (forId?.imageUrl) : (forId?.forImage?.imageUrl)}
                 alt={forId?.name}
               />
             </div>

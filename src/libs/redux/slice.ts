@@ -1,24 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PizzaCard } from '../types/type';
 
-export interface functionState {
-  value: number
+
+export interface FunctionState {
+  addToLocal: PizzaCard[]
 }
 
-const initialState: functionState = {
-  value: 0,
-}
+const initialState: FunctionState = {
+  addToLocal: [],
+};
 
 const functionSlice = createSlice({
   name: 'function',
   initialState,
   reducers: {
-    decrement: (state) => {
-        state.value -= 1
-      },
+    addToLocalStorage: (state, action: PayloadAction<PizzaCard>) => {
+      // Добавляем элемент в состояние
+      state.addToLocal.push(action.payload);
+      // Сохраняем обновленный массив в localStorage
+      localStorage.setItem('cartItems', JSON.stringify(state.addToLocal));
+    },
+    getLocalStorage: (state) => {
+      const storedItems = localStorage.getItem('items');
+      if (storedItems) {
+        state.addToLocal = JSON.parse(storedItems);
+      }
+    },
   },
-})
+});
 
-// Action creators are generated for each case reducer function
-export const { decrement } = functionSlice.actions
+export const { addToLocalStorage, getLocalStorage  } = functionSlice.actions;
 
-export const reducer =  functionSlice.reducer
+export const reducer = functionSlice.reducer;

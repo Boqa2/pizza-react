@@ -14,7 +14,7 @@ const Layout = () => {
   const [efects, setEfects] = useState(false);
   const {modal} =useFunction()
   return (
-    <main className="min-h-screen relative overflow-">
+    <main className="min-h-screen scrollbar-none relative overflow-">
       {modal && (<PizzaOpenModal/>)}
       <Cart/>
       <Sidebar efects={efects} setEfects={() => setEfects(false)} />

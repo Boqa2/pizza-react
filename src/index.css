@@ -24,4 +24,7 @@
   .ligth-text {
     @apply dark:text-white;
   }
+  .fuck{
+    @apply border dark-border px-2 py-0.5 rounded-lg  active:translate-y-1 duration-300
+  }
 }

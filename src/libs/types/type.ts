@@ -19,6 +19,13 @@ export interface ItemSearch {
 
 }
 
+export interface Carts{
+  imageUrl:string
+  name:string,
+  priseForSearch:number,
+  discription:string,
+}
+
 export interface PizzaCard {
     id: string; // Уникальный идентификатор пиццы
     name: string; // Название пиццы
@@ -38,6 +45,7 @@ export interface PizzaCard {
         size: string,
         imageUrl: string
     }
+    addToCart:()=>void
 }
 export interface Pros {
     id: string;

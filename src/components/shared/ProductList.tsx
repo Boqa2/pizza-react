@@ -10,7 +10,9 @@ export const ProductCard = ({
   onClick,
   onClicks,
   priseForSearch,
+  addToCart
 }: PizzaCard) => {
+  
   return (
     <div key={id}
       className={`font-nunito relative py-2 -z-0 w-full  h-full rounded-md dark:text-white ${className}`}
@@ -39,6 +41,7 @@ export const ProductCard = ({
               от <b>{priseForSearch}</b> c
             </span>
             <button
+            onClick={addToCart}
               className=" but hidden md:flex dark:text-white text-sm h-8 px-2  py-1 z-40 dark:bg-indigo-600"
             >
               <Plus size={15} className="md:mr-1 mr-0" />
